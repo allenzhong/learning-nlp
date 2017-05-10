@@ -9,7 +9,6 @@ class TFIDFCaculator
   # Read Files
   def read
     raise Error unless File.directory?(@path)
-    #ignore file naming starts with .
     files = Dir.entries(@path).reject {|entry| entry =~ /^\.{1,2}/}
     files = files.map {|f| File.join(@path, f) }
     calculate_frequency(files)
@@ -29,7 +28,6 @@ class TFIDFCaculator
     frequency = Hash.new(0) 
     words_count = 0
     input_file = File.open(file, 'r')
-    # scan word with letters in length range 1 to 20
     input_file.read.downcase.scan(/\b[a-z]{1,20}\b/) do |word|
       words_count = words_count + 1
       frequency[word] = frequency[word] + 1
@@ -65,8 +63,7 @@ class TFIDFCaculator
     count
   end
 
-  # combine results to generate a hash formatting as below
-  # { word: tf-idf_value }
+  # output combining frequency in whole files
   def combine_frequency
     final_result = Hash.new(0)
     @documents.each do |doc|
@@ -74,9 +71,9 @@ class TFIDFCaculator
       tf = doc[:tf]
       # key is a word
       frequency.keys.sort.each do |key|
-        idf_value = calculate_idf(key).round(5)
-        tf_idf = (tf[key] * idf_value).round(5)
-        final_result[key] = final_result[key] + tf_idf
+        # idf_value = calculate_idf(key).round(5)
+        # tf_idf = (tf[key] * idf_value).round(5)
+        final_result[key] = final_result[key] + tf[key]
       end
     end 
     final_result
