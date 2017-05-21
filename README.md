@@ -2,4 +2,9 @@
 
 This project is for Learning Nature Language Processing.
 
-*  **tfidf-calculator.rb**: This program can calculate tf-idf value to each word in documents containing in the path as a initialize parameter of class. 
+The instructions of each directory:
+
+* **classificaion-py**: classification with NaiveBayes written by python with NLTK
+* **Frequency-node**: Due to the performance of python, it is written by node to read all files and calculate frequency for each word in corpus. And it utilized Node library Natural.
+* **tf-idf-ruby_py**: TF-IDF calculator written by both Ruby and Python
+
