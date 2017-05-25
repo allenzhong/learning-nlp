@@ -1,6 +1,6 @@
 # learning-nlp
 
-This project is for Learning Nature Language Processing (NLP). The variety of programming language are using for implementing different functionalities in NLP.
+This project is for Learning Nature Language Processing (NLP). The variety of programming languages are using for implementing different functionalities of NLP.
 
 
 The introduction of each directory:
