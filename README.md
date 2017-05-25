@@ -9,3 +9,10 @@ The introduction of each directory:
 * **Frequency-node**: Due to the performance of python, it is written by node to read all files and calculate frequency for each word in corpus. And it utilized Node library Natural.
 * **tf-idf-ruby_py**: TF-IDF calculator written by both Ruby and Python
 
+# lingpipe directory
+
+Lingpipe home page: [http://alias-i.com/lingpipe/](http://alias-i.com/lingpipe/)
+
+
+
+
