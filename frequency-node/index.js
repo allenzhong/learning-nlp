@@ -1,3 +1,5 @@
+//data path, subdirectories are allowed 
+const path = "./data/"
 
 // sync version
 function walkSync(currentDirPath, callback) {
@@ -13,17 +15,17 @@ function walkSync(currentDirPath, callback) {
         }
   });
 }
-
+// this library is not original one.
 const natural = require('natural'),
     TfIdf = natural.TfIdf,
     tfidf = new TfIdf();
 
-const path = "./data/"
 let files = [];
 walkSync(path, (path, stat) => {
   tfidf.addFileSync(path);
 })
 
+// this function is added, not a original one.
 let documents = tfidf.getDocuments()
 let words = {}
 
