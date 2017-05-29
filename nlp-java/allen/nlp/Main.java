@@ -15,6 +15,11 @@ import allen.nlp.classifier.*;
 public class Main {
 
     public static void main(String[] args) {
+        classification();
+        taggingWords();
+    }
+
+    public static void classification() {
         String filePath = "/Users/allenzhong/Projects/NLP/frequency/data";
         DocumentsClassifier classifier = new DocumentsClassifier();
         classifier.setCategories(new String[]{"CCAT", "OTHERS"});
@@ -27,16 +32,16 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-//        TaggedWord w1 = new TaggedWord("aaa","aaa");
-//        TaggedWord w2 = new TaggedWord("aaa","aaa");
-//        System.out.println(w1.equals(w2));
-//	    String filePath = "/Users/allenzhong/Projects/NLP/frequency/data/CCAT";
-//	    MultipleFilesTagger tagger = new MultipleFilesTagger(filePath, ".*.txt$");
-//        tagger.writeToCSV("CCAT.csv");
-//        TaggingProcessor processor = new TaggingProcessor(filePath);
-//        List<TaggedWord> list = processor.tagTextinFile();
-//        for(TaggedWord word : list) {
-//            System.out.printf("%s : %s \n", word.getWord(), word.getTag());
-//        }
+    }   
+
+    public static void taggingWords() {
+        String filePath = "/Users/allenzhong/Projects/NLP/frequency/data/CCAT";
+        MultipleFilesTagger tagger = new MultipleFilesTagger(filePath, ".*.txt$");
+        tagger.writeToCSV("CCAT.csv");
+        TaggingProcessor processor = new TaggingProcessor(filePath);
+        List<TaggedWord> list = processor.tagTextinFile();
+        for(TaggedWord word : list) {
+            System.out.printf("%s : %s \n", word.getWord(), word.getTag());
+        }
     }
 }
